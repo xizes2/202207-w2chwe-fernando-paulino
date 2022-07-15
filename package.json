@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sass-watch": "npx sass scss/styles.scss ./public/css/styles.css --watch",
+    "compile-sass": "npx sass scss/styles.scss ./public/css/styles.css"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +19,11 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "husky": "^8.0.0"
-  },
-  "dependencies": {
+    "husky": "^8.0.0",
+    "sass": "^1.53.0",
     "jest": "^28.1.3"
   },
+  "dependencies": {},
   "babel": {
     "env": {
       "test": {
