@@ -1,23 +1,23 @@
 class GameOfLifeBoard {
-  lines;
+  linesAmount;
   elementsPerLine;
   board = [];
 
-  constructor(lines, elementsPerLine) {
-    this.lines = lines;
+  constructor(linesAmount, elementsPerLine) {
+    this.linesAmount = linesAmount;
     this.elementsPerLine = elementsPerLine;
   }
 
   createBoard() {
-    for (let line = 0; line < this.lines; line++) {
+    for (let line = 0; line < this.linesAmount; line++) {
+      const lineArray = [];
       for (let column = 0; column < this.elementsPerLine; column++) {
-        this.board.push({ name: `${line},${column}`, isAlive: true });
+        lineArray.push({ name: `${line},${column}`, isAlive: true });
       }
+      this.board.push(lineArray);
     }
     return this.board;
   }
 }
 
-const board = new GameOfLifeBoard(15, 5);
-board.createBoard();
-console.log(board.board);
+export default GameOfLifeBoard;
