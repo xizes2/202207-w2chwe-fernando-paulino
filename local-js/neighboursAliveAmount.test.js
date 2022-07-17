@@ -12,7 +12,7 @@ describe("When a function neighboursAliveAmount its' called", () => {
 
       const result = neighboursAliveAmount(cellsList);
 
-      expect(result).toStrictEqual(expectedResult);
+      expect(result).toEqual(expectedResult);
     });
   });
 });
