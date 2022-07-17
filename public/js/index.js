@@ -1,37 +1,25 @@
 import GameOfLifeBoard from "./classes/GameOfLifeBoard.js";
-import changeCellStatus from "./logic-functions/changeCellsStatus.js";
+import drawBoard from "./draw-functions/drawBoard.js";
+import drawNextBoard from "./draw-functions/drawNextBoard.js";
 
-// const table = document.createElement("table");
-// const text = document.createTextNode("pppp");
-// table.appendChild(text);
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
 
-// document.body.insertAdjacentElement();
+const cellResolution = 30;
+canvas.width = 200;
+canvas.height = 200;
+const numberOfLines = canvas.width / cellResolution;
+const numberOfColumns = canvas.height / cellResolution;
 
-const numberOfLines = 3;
-const numberOfColumns = 3;
-
-const gameBoard = new GameOfLifeBoard(
+let gameBoard = new GameOfLifeBoard(
   numberOfLines,
   numberOfColumns
 ).createBoard();
 
-// console.log(gameBoard);
+const animateBoard = () => {
+  gameBoard = drawNextBoard(gameBoard);
+  drawBoard(gameBoard, ctx, cellResolution);
+  requestAnimationFrame(animateBoard());
+};
 
-// const table = document.createElement("table");
-// const tr = document.createElement("tr");
-// table.appendChild(tr);
-
-// const newContent = document.createTextNode("test");
-// table.appendChild(newContent);
-
-// const currentDiv = document.getElementById("div1");
-
-// for (const element of gameBoard) {
-//   console.log(element);
-// }
-
-for (let line = 0; line < numberOfLines.length; line++) {
-  console.log(line);
-}
-
-// document.body.insertBefore(table, currentDiv);
+animateBoard();
