@@ -1,13 +1,14 @@
 {
+  "type": "module",
   "name": "week-2---weekend-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npx jest --watchAll",
     "prepare": "husky install",
     "sass-watch": "npx sass scss/styles.scss ./public/css/styles.css --watch",
-    "compile-sass": "npx sass scss/styles.scss ./public/css/styles.css"
+    "sass-production": "npx sass scss/styles.scss ./public/css/styles.css"
   },
   "keywords": [],
   "author": "",
