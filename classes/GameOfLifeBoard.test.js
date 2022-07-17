@@ -8,25 +8,25 @@ describe("Given a GameOfLifeBoard class", () => {
       const gameBoard = new GameOfLifeBoard(linesAmount, elementsPerLine);
       const expectedResult = [
         [
-          { name: "0,0", isAlive: true },
-          { name: "0,1", isAlive: true },
-          { name: "0,2", isAlive: true },
+          { linePosition: 0, columnPosition: 0, isAlive: false },
+          { linePosition: 0, columnPosition: 1, isAlive: false },
+          { linePosition: 0, columnPosition: 2, isAlive: false },
         ],
         [
-          { name: "1,0", isAlive: true },
-          { name: "1,1", isAlive: true },
-          { name: "1,2", isAlive: true },
+          { linePosition: 1, columnPosition: 0, isAlive: false },
+          { linePosition: 1, columnPosition: 1, isAlive: false },
+          { linePosition: 1, columnPosition: 2, isAlive: false },
         ],
         [
-          { name: "2,0", isAlive: true },
-          { name: "2,1", isAlive: true },
-          { name: "2,2", isAlive: true },
+          { linePosition: 2, columnPosition: 0, isAlive: false },
+          { linePosition: 2, columnPosition: 1, isAlive: false },
+          { linePosition: 2, columnPosition: 2, isAlive: false },
         ],
       ];
 
       const result = gameBoard.createBoard();
 
-      expect(result).toStrictEqual(expectedResult);
+      expect(result).toEqual(expectedResult);
     });
   });
 });

@@ -16,12 +16,12 @@ describe("When a findNeighbours function is called", () => {
       );
 
       const result = [
-        { name: "1,1", isAlive: true },
-        { name: "1,2", isAlive: true },
-        { name: "2,1", isAlive: true },
+        { linePosition: 1, columnPosition: 1, isAlive: false },
+        { linePosition: 1, columnPosition: 2, isAlive: false },
+        { linePosition: 2, columnPosition: 1, isAlive: false },
       ];
 
-      expect(result).toStrictEqual(expectedResult);
+      expect(result).toEqual(expectedResult);
     });
   });
 });
