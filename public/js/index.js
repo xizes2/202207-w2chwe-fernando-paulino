@@ -21,5 +21,3 @@ const animateBoard = () => {
   drawBoard(gameBoard, ctx, cellResolution);
   requestAnimationFrame(animateBoard());
 };
-
-animateBoard();
