@@ -2,7 +2,7 @@ const neighboursAliveAmount = (neighbors) => {
   let neighboursAliveCount = 0;
 
   for (const cell of neighbors) {
-    if (cell.isAlive) {
+    if (cell === 1) {
       neighboursAliveCount++;
     }
   }
